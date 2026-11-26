@@ -1,5 +1,10 @@
 # 中文 CSL 样式 - Zotero 中文社区
 
+[中文](#chinese) · [English](#english)
+
+<a name="chinese"></a>
+## 中文
+
 本仓库提供了一系列中文期刊和学位论文的 CSL 样式，其中大部分是由 GB/T 7714—2015[^gbt7714] 衍生的。
 
 [^gbt7714]: 《[GB/T 7714—2015 信息与文献 参考文献著录规则](https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D8055ED3A7E05397BE0A0AB82A)》（[PDF](http://www.cessp.org.cn/a258.html)）
@@ -317,3 +322,27 @@ Zotero 通过 `DOI` 导入文献时能否带摘要 <https://zhuanlan.zhihu.com/p
 给 `Word` 中的 Zotero 设置快捷键 <https://zhuanlan.zhihu.com/p/55259481>。
 
 </details>
+
+---
+
+<a name="english"></a>
+## English
+
+This fork preserves the [Zotero Chinese Community's CSL styles](https://github.com/zotero-chinese/styles) for Chinese journals and dissertations. Many styles derive from [GB/T 7714–2015](https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D8055ED3A7E05397BE0A0AB82A). Browse the [style gallery](https://zotero-chinese.com/styles/), the [Gitee mirror](https://gitee.com/zotero-chinese-x/styles), or the [official CSL repository](https://github.com/citation-style-language/styles).
+
+### Install and use
+
+Open a style in the gallery and use one of its download links to install it. Some bundled styles use the [CSL-M extensions](https://citeproc-js.readthedocs.io/en/latest/csl-m/index.html) supported by [citeproc-js](https://github.com/Juris-M/citeproc-js); Zotero may display a CSL 1.0.2 validation warning for them.
+
+For styles that format Chinese and English references differently, set each item's Zotero or JurisM **Language** field to a tag such as `zh-CN` or `en-US`, not a display name such as “English.” Refresh the Word add-in. If needed, reinsert the citation or switch the document language in **Document Preferences**. [delitemwithatt](https://github.com/redleafnew/delitemwithatt) can set item languages in bulk. See the [word processor FAQ](https://zotero-chinese.com/user-guide/faqs/word-addon#中英文混排) and [Zotero guide](https://zotero-chinese.com/user-guide/).
+
+### Contribute and preview
+
+Use the upstream [issue templates](https://github.com/zotero-chinese/styles/issues/new/choose) for style requests and corrections. Complete the required fields.
+
+Install Node.js and Git. Clone with `git clone --recursive https://github.com/zotero-chinese/styles.git`. For an existing clone, run `git submodule update --init`. Enable Corepack if `pnpm` is unavailable, then run `pnpm install` from the repository.
+- `pnpm dev` watches CSL changes and generates previews; `pnpm dev:open` opens the live browser preview.
+- `pnpm build` generates all data; `pnpm preview "src/accounting-research/accounting-research.csl"` previews one style.
+- Put new styles in an individual folder under `src/`. Optional `items.json` and `cites.json` fixtures use the [CSL-JSON formats](https://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html). Do not manually edit the generated `metadata.json` or `index.md`.
+
+Styles use [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Attribution and the community's additional Zotero troubleshooting links remain in the original Chinese section.
